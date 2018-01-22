@@ -16,11 +16,11 @@ function subrange(win) {
   }
   const isIncremental = win.every((e,index,self) => {
      const next = self[index + 1];
-     return next ? next >= e : true;
+     return next ? next > e : true;
   });
   const isDecremental = win.every((e,index,self) => {
      const next = self[index + 1];
-     return next ? next <= e : true;
+     return next ? next < e : true;
   });
 
   let newRes = isIncremental ? 1 : -1;
